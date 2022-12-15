@@ -71,6 +71,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-leetcode_435" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/15/leetcode_435/" class="article-date">
+  <time class="dt-published" datetime="2022-12-15T13:52:00.000Z" itemprop="datePublished">2022-12-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/15/leetcode_435/">LeetCode 435</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>贪心算法第三弹</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>给定一个区间的集合 intervals ，其中 intervals[i] &#x3D; [starti, endi] 。返回 需要移除区间的最小数量，使剩余区间互不重叠。</p>
+</blockquote>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">eraseOverlapIntervals</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; intervals)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(intervals.<span class="built_in">begin</span>(), intervals.<span class="built_in">end</span>(),</span><br><span class="line">             [](<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; p1, <span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; p2)&#123;</span><br><span class="line">                <span class="keyword">return</span> p1[<span class="number">0</span>] &lt; p2[<span class="number">0</span>];</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> removed = <span class="number">0</span>, last = intervals[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">1</span>; i &lt; intervals.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &gt;= last) &#123;</span><br><span class="line">                last = intervals[i][<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                ++removed;</span><br><span class="line">                <span class="keyword">if</span> (intervals[i][<span class="number">1</span>] &lt; last) &#123;</span><br><span class="line">                    last = intervals[i][<span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> removed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>耗时：336ms<br>内存：87.7MB</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/15/leetcode_435/" data-id="clbp62zkb0000ne9gep2l9i1i" data-title="LeetCode 435" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-leetcode_135" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/12/15/leetcode_135/" class="article-date">
@@ -234,6 +284,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/12/15/leetcode_435/">LeetCode 435</a>
+          </li>
         
           <li>
             <a href="/2022/12/15/leetcode_135/">LeetCode 135</a>
