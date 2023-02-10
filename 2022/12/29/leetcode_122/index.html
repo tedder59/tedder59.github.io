@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>LeetCode 605 | Hexo</title>
+  <title>LeetCode 122 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="贪心算法第四弹 题目 假设有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花不能种植在相邻的地块上，它们会争夺水源，两者都会死去。给你一个整数数组 flowerbed 表示花坛，由若干 0 和 1 组成，其中 0 表示没种植花，1 表示种植了花。另有一个数 n，能否在不打破种植规则的情况下种入 n 朵花？能则返回 true ，不能则返回 false。  解答12345678910111">
+  <meta name="description" content="贪心算法第六弹 题目 给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。在每一天，你可以决定是否购买和&#x2F;或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。返回 你能获得的 最大 利润。  解答12345678910111213141516class Solution &amp;#123;public:    int">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 605">
-<meta property="og:url" content="http://example.com/2022/12/17/leetcode_605/index.html">
+<meta property="og:title" content="LeetCode 122">
+<meta property="og:url" content="http://example.com/2022/12/29/leetcode_122/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="贪心算法第四弹 题目 假设有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花不能种植在相邻的地块上，它们会争夺水源，两者都会死去。给你一个整数数组 flowerbed 表示花坛，由若干 0 和 1 组成，其中 0 表示没种植花，1 表示种植了花。另有一个数 n，能否在不打破种植规则的情况下种入 n 朵花？能则返回 true ，不能则返回 false。  解答12345678910111">
+<meta property="og:description" content="贪心算法第六弹 题目 给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。在每一天，你可以决定是否购买和&#x2F;或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。返回 你能获得的 最大 利润。  解答12345678910111213141516class Solution &amp;#123;public:    int">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-17T06:13:00.000Z">
-<meta property="article:modified_time" content="2022-12-17T06:17:59.752Z">
+<meta property="article:published_time" content="2022-12-29T14:17:00.000Z">
+<meta property="article:modified_time" content="2022-12-29T14:25:17.965Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="leetcode">
 <meta property="article:tag" content="贪心">
@@ -75,10 +75,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-leetcode_605" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-leetcode_122" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/12/17/leetcode_605/" class="article-date">
-  <time class="dt-published" datetime="2022-12-17T06:13:00.000Z" itemprop="datePublished">2022-12-17</time>
+    <a href="/2022/12/29/leetcode_122/" class="article-date">
+  <time class="dt-published" datetime="2022-12-29T14:17:00.000Z" itemprop="datePublished">2022-12-29</time>
 </a>
     
   <div class="article-category">
@@ -93,7 +93,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      LeetCode 605
+      LeetCode 122
     </h1>
   
 
@@ -101,15 +101,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>贪心算法第四弹</p>
+        <p>贪心算法第六弹</p>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>假设有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花不能种植在相邻的地块上，它们会争夺水源，两者都会死去。<br>给你一个整数数组 flowerbed 表示花坛，由若干 0 和 1 组成，其中 0 表示没种植花，1 表示种植了花。另有一个数 n，能否在不打破种植规则的情况下种入 n 朵花？能则返回 true ，不能则返回 false。</p>
+<p>给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。在每一天，你可以决定是否购买和&#x2F;或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。返回 你能获得的 最大 利润。</p>
 </blockquote>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canPlaceFlowers</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; flowerbed, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">expand</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        expand.<span class="built_in">insert</span>(expand.<span class="built_in">begin</span>() + <span class="number">1</span>,</span><br><span class="line">                      flowerbed.<span class="built_in">begin</span>(),</span><br><span class="line">                      flowerbed.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= flowerbed.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((expand[i] + expand[i - <span class="number">1</span>] + expand[i + <span class="number">1</span>]) == <span class="number">0</span>) &#123;</span><br><span class="line">                expand[i] = <span class="number">1</span>;</span><br><span class="line">                --n;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> n &lt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxProfit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> last = prices[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; prices.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prices[i] &lt; prices[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                ans += prices[i - <span class="number">1</span>] - last;</span><br><span class="line">                last = prices[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ans += prices.<span class="built_in">back</span>() - last;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>耗时：0ms<br>内存：12.6MB</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/17/leetcode_605/" data-id="clbrjsua900007c9g9dika42q" data-title="LeetCode 605" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/29/leetcode_122/" data-id="cldxs6kx80001ri9g92t1hu9b" data-title="LeetCode 122" class="article-share-link">Share</a>
       
       
       
@@ -121,19 +123,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/12/25/leetcode_452/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/02/01/leetcode_763/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          LeetCode 452
+          LeetCode 763
         
       </div>
     </a>
   
   
-    <a href="/2022/12/15/leetcode_435/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/12/25/leetcode_452/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LeetCode 435</div>
+      <div class="article-nav-title">LeetCode 452</div>
     </a>
   
 </nav>
